@@ -38,6 +38,8 @@ class TusClient {
 
   Uri? _uploadUrl;
 
+  Uri? _streamId;
+
   int? _offset;
 
   bool _pauseUpload = false;
@@ -97,6 +99,7 @@ class TusClient {
     }
 
     _uploadUrl = _parseUrl(urlStr);
+    _streamId = response.headers["stream-media-id"];
     store?.set(_fingerprint, _uploadUrl as Uri);
   }
 
