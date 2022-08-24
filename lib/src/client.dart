@@ -38,7 +38,7 @@ class TusClient {
 
   Uri? _uploadUrl;
 
-  Uri? _streamId;
+  String? _streamId;
 
   int? _offset;
 
@@ -63,6 +63,9 @@ class TusClient {
 
   /// The URI on the server for the file
   Uri? get uploadUrl => _uploadUrl;
+
+  /// The StreamID on the server for the file
+  String? get streamID => _streamId;
 
   /// The fingerprint of the file being uploaded
   String get fingerprint => _fingerprint;
